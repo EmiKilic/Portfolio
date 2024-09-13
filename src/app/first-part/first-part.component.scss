@@ -1,0 +1,106 @@
+.section-1 {
+    background-color: #FFFCF3;
+    top: 0;
+    
+}
+
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    max-width: 100%;
+
+    h1 {
+        font-family: 'Syne';
+        font-size: 128px;
+        margin-bottom: 0px;
+        font-weight: 800;
+    }
+
+    .underline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        height: 60px;
+        gap: 32px;
+
+        .line {
+            border: 2px solid black;
+            width: 63%;
+            height: 0px;
+        }
+
+        h2 {
+            font-family: 'Overpass';
+            font-weight: 700;
+            color: #4B47FF;
+            font-size: 48px;
+        }
+    }
+}
+
+.welcome-second-part {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 64px;
+    padding-right: 64px;
+    bottom: 0;
+
+    .contact-mail {
+        transform: rotate(-90deg);
+        padding-left: 0px;
+        padding-top: 64px;
+
+        a {
+            text-decoration: none;
+            font-family: 'Overpass';
+            font-size: 22px;
+            font-weight: 300;
+            cursor: pointer;
+            color: black;
+        }
+    }
+
+    .scroll-down {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .container-arrow {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            width: 100px;
+            height: 250px;
+            overflow: hidden;
+
+            img {
+                position: absolute;
+                top: -92px;
+                left: 50%;
+                transform: translateX(-50%);
+                animation: fall 1s linear infinite;
+                height: 92px;
+                width: 50px;
+            }
+        }
+
+        p {
+            font-size: 22px;
+            font-weight: 300;
+            font-family: 'Overpass';
+        }
+    }
+}
+@keyframes fall {
+    0% {
+        top: -92px;
+    }
+    100% {
+        top: 350px;
+    }
+}

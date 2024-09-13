@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+    width: 100vw;
+    max-width: 100%;
+}
+
+* {
+    background-color: #FFFCF3;
+
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+    font-family: "Syne";
+    src: url('../src/fonts/Syne-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: "Overpass";
+    src: url('../src/fonts/Overpass-VariableFont_wght.ttf');
+}
+
+

@@ -1,0 +1,72 @@
+.about-me {
+    background-color: #FFFCF3;
+    padding-left: 128px;
+    padding-right: 128px;
+
+    h1 {
+        font-family: 'Syne';
+        font-size: 78px;
+        font-weight: 800;
+        margin: 0;
+        padding-bottom: 32px;
+    }
+
+    .about-me-main {
+        display: flex;
+        justify-content: space-between;
+
+        .about-me-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 60%;
+
+            p {
+                font-family: 'Overpass';
+                font-size: 22px;
+                font-weight: 400;
+            }
+
+            .location {
+                padding-top: 32px;
+                padding-bottom: 32px;
+
+                img {
+                    width: 48px;
+                    height: 36px;
+                }
+
+                div {
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                }
+            }
+
+            button {
+                position: relative;
+                width: 210px;
+                height: 68px;
+                border: 4px solid black;
+                font-size: 23px;
+                font-family: 'Overpass';
+                transition: 0.3s;
+                font-weight: 400;
+
+                &:hover {
+                    font-weight: 800;
+                    width: 250px;
+                    transition: 0.3s;
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+        img {
+            width: 550px;
+            height: 550px;
+        }
+    }
+}
