@@ -6,6 +6,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { FirstPartComponent } from './first-part/first-part.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { MouseFollowerComponent } from './shared/mouse-follower/mouse-follower.component';
+import { MySkillsComponent } from './my-skills/my-skills.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { MouseFollowerComponent } from './shared/mouse-follower/mouse-follower.c
     FooterComponent,
     FirstPartComponent,
     AboutMeComponent,
-    MouseFollowerComponent
+    MouseFollowerComponent,
+    MySkillsComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

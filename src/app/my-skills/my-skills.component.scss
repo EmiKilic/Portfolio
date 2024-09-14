@@ -1,0 +1,94 @@
+.arrow-div {
+  display: flex;
+  justify-content: end;
+  position: relative;
+
+
+  .arrow-bottom-left {
+    position: absolute;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease, top 0.3s ease;
+
+    &:hover {
+      transform: translateX(-65%) translateY(15%);
+      cursor: pointer;
+    }
+  }
+}
+
+.skills-section {
+  position: relative;
+  top: 250px;
+  border: 4px solid black;
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fffcf3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    position: absolute;
+    font-family: 'Syne';
+    font-size: 78px;
+    font-weight: 800;
+    top: -100px;
+  }
+
+  .skills {
+    width: 70%;
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    gap: 128px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        height: 75px;
+        width: 75px;
+      }
+
+      h2 {
+        font-family: 'Overpass';
+        font-size: 16px;
+        font-weight: 700;
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  .learn {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    p {
+      font-family: 'Overpass';
+      font-size: 22px;
+      font-weight: 400;
+
+      a {
+        text-decoration: none;
+        color: #4B47FF;
+        padding: 4px;
+      }
+    }
+  }
+
+}
+
+
+
