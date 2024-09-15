@@ -8,22 +8,20 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { MouseFollowerComponent } from './shared/mouse-follower/mouse-follower.component';
 import { MySkillsComponent } from './my-skills/my-skills.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-import { DropdownMenuComponent } from './shared/dropdown-menu/dropdown-menu.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet,
     HeaderComponent,
+    RouterOutlet,
     FooterComponent,
     FirstPartComponent,
     AboutMeComponent,
     MouseFollowerComponent,
     MySkillsComponent,
     PortfolioComponent, 
-    DropdownMenuComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

@@ -13,7 +13,10 @@
 
     .about-me-main {
         display: flex;
-        justify-content: space-between;
+        justify-content: start;
+        width: 100%;
+        height: auto;
+        left: 0;
 
         .about-me-info {
             display: flex;
@@ -63,28 +66,31 @@
             }
 
         }
-        .me {
-            position: absolute;
-        }
-        img {
-            width: 550px;
-            height: 550px;
-            z-index: 1;
-        }
 
-        .border {
+        .image {
             position: relative;
-            z-index: 9;
-            width: 550px;
-            height: 550px;
-            top: 10px;
-            left: 20px;
-            border: 4px solid transparent;
-            background-color: transparent;
+            .me {
+                position: absolute;
+                width: 550px;
+                height: 550px;
+                z-index: 1;
+                background-color: transparent;
+            }
 
-            &:hover {
-                border: 4px solid black;
+            .border {
+                position: absolute;
+                z-index: 9;
+                width: 550px;
+                height: 550px;
+                top: 20px;
+                left: 20px;
+                border: 4px solid transparent;
+                background-color: transparent;
 
+                &:hover {
+                    border: 4px solid black;
+
+                }
             }
         }
     }

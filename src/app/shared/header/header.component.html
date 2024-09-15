@@ -1,4 +1,24 @@
-<div class="header">
+<div class="header" style="position: fixed; z-index: 9999; top: 0;">
     <img class="initial" src="assets/header/initials/initials_EK.png" alt="">
-    <img (click)="openNav()" src="assets/header/burger-menu/burger_1.png" alt="">
+    <img (click)="toggleNav()" src="assets/header/burger-menu/burger_1.png" alt="">
+</div>
+
+<div id="myNav" class="overlay">
+    <div class="overlay-content">
+        <a href="#"><span></span>About me</a>
+        <a href="#"><span></span>My skills</a>
+        <a href="#"><span></span>Portfolio</a>
+    </div>
+    <div class="footer">
+        <img class="rectangle" src="assets/about-me/scroll-down/rectangle.png" alt="">
+        <div class="hey">
+            <h1>Say Hi!</h1>
+            <h2>emirhan_kilic&#64;outlook.de</h2>
+        </div>
+        <div class="socials">
+            <a href="" style="background-color: transparent;"><img src="assets/about-me/scroll-down/git.png" alt=""></a>
+            <a href="" style="background-color: transparent;"><img src="assets/about-me/scroll-down/mail.png" alt=""></a>
+            <a href="" style="background-color: transparent;"><img src="assets/about-me/scroll-down/linked.png" alt=""></a>
+        </div>
+    </div>
 </div>
