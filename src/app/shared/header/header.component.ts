@@ -6,22 +6,24 @@ import { Component, ElementRef, Renderer2 } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-
   burger_menu = [
-    "assets/header/burger-menu/burger_1.png",
-    "assets/header/burger-menu/burger_2.png",
-    "assets/header/burger-menu/burger_3.png",
-    "assets/header/burger-menu/burger_4.png",
-    "assets/header/burger-menu/burger_5.png",
-    "assets/header/burger-menu/burger_6.png",
-    "assets/header/burger-menu/burger_7.png",
-    "assets/header/burger-menu/burger_8.png",
-  ]
+    'assets/header/burger-menu/burger_1.png',
+    'assets/header/burger-menu/burger_2.png',
+    'assets/header/burger-menu/burger_3.png',
+    'assets/header/burger-menu/burger_4.png',
+    'assets/header/burger-menu/burger_5.png',
+    'assets/header/burger-menu/burger_6.png',
+    'assets/header/burger-menu/burger_7.png',
+    'assets/header/burger-menu/burger_8.png',
+  ];
 
+  currentImage: string = this.burger_menu[0];
   private isNavOpen = false;
+  private interval: any;
+
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   toggleNav() {
@@ -31,9 +33,46 @@ export class HeaderComponent {
     if (this.isNavOpen) {
       this.renderer.setStyle(overlay, 'display', 'flex');
       this.renderer.addClass(document.body, 'no-scroll');
+      this.startOpenAnimation();
     } else {
       this.renderer.setStyle(overlay, 'display', 'none');
       this.renderer.removeClass(document.body, 'no-scroll');
+      this.startCloseAnimation();
+    }
+  }
+
+  startOpenAnimation() {
+    let index = 0;
+    this.clearAnimation();
+
+    this.interval = setInterval(() => {
+      if (index < 5) {
+        this.currentImage = this.burger_menu[index];
+        index++;
+      } else {
+        this.clearAnimation();
+      }
+    }, 1000 / 60);
+  }
+
+  startCloseAnimation() {
+    let index = 4;
+    this.clearAnimation();
+
+    this.interval = setInterval(() => {
+      if (index < this.burger_menu.length) {
+        this.currentImage = this.burger_menu[index];
+        index++;
+      } else {
+        this.clearAnimation();
+        this.currentImage = this.burger_menu[0];
+      }
+    }, 1000 / 60);
+  }
+
+  clearAnimation() {
+    if (this.interval) {
+      clearInterval(this.interval);
     }
   }
 }
