@@ -1,23 +1,23 @@
 <div class="header" style="position: fixed; z-index: 9999; top: 0;">
-    <img class="initial" src="assets/header/initials/initials_EK.png" alt="">
+    <a href="#section-1"><img class="initial" src="assets/header/initials/initials_EK.png" alt=""></a>
     <img (click)="toggleNav()" [src]="currentImage" alt="">
 </div>
 
 <div id="myNav" class="overlay">
     <div class="overlay-content">
-        <a href="#"><span></span>About me</a>
-        <a href="#"><span></span>My skills</a>
-        <a href="#"><span></span>Portfolio</a>
+        <a (click)="toggleNav()" href="#about"><span></span>About me</a>
+        <a (click)="toggleNav()" href="#skills"><span></span>My skills</a>
+        <a (click)="toggleNav()" href="#projects"><span></span>Portfolio</a>
     </div>
     <div class="footer">
         <img class="rectangle" src="assets/about-me/scroll-down/rectangle.png" alt="">
         <div class="hey">
             <h1>Say Hi!</h1>
-            <h2>emirhan_kilic&#64;outlook.de</h2>
+            <a (click)="toggleNav()" href="#footer" style="text-decoration: none;"><h2>emirhan_kilic&#64;outlook.de</h2></a>
         </div>
         <div class="socials">
             <a href="https://github.com/EmiKilic" target="_blank" rel="noopener noreferrer" style="background-color: transparent;"><img src="assets/about-me/scroll-down/git.png" alt=""></a>
-            <a href="" target="_blank" rel="noopener noreferrer" style="background-color: transparent;"><img src="assets/about-me/scroll-down/mail.png" alt=""></a>
+            <a (click)="toggleNav()" href="#skills" style="background-color: transparent;"><img src="assets/about-me/scroll-down/mail.png" alt=""></a>
             <a href="https://www.linkedin.com/in/emirhan-kilic-a16461265/" target="_blank" rel="noopener noreferrer" style="background-color: transparent;"><img src="assets/about-me/scroll-down/linked.png" alt=""></a>
         </div>
     </div>
