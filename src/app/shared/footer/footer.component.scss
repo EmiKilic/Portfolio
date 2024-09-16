@@ -224,3 +224,48 @@
         }
     }
 }
+
+  @media (max-width: 750px) {
+    h1 {
+        font-size: 48px !important;
+        top: 40px !important;
+        margin-bottom: 0px !important;
+    }
+    title {
+        font-size: 18px !important;
+    }
+    h2 {
+        font-size: 18px !important;
+    }
+    button {
+        width: 150px !important;
+    }
+    .links {
+        left: -25px !important;
+        bottom: 5px !important;
+        justify-content: space-evenly !important;
+    }
+    p {
+        margin: 5px !important;
+    }
+    .arrow-down {
+        img {
+        width: 30px !important;
+    }}
+    .bottom-left, .bottom-right {
+        padding: 0 !important;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .rectangle {
+        height: 114vh !important;
+    }
+    .footer {
+        height: 761px !important;
+    }
+    .submit {
+        height: 50px !important;
+        width: 180px !important;
+    }
+  }

@@ -160,3 +160,33 @@
         }
     }
 }
+
+@media (max-width: 1600px) {
+
+}
+
+@media (max-width: 1050px) {
+
+}
+
+@media (max-width: 750px) {
+ a {
+    font-size: 48px !important;
+ }
+ .hey, .socials {
+    padding: 0px !important;
+ }
+
+}
+
+@media (max-width: 450px) {
+h1 {
+    font-size: 38px !important;
+}
+h2 {
+    font-size: 16px !important;
+}
+.footer {
+    height: 30% !important;
+ }
+}

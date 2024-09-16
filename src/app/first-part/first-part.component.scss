@@ -53,6 +53,7 @@
         transform: rotate(-90deg);
         padding-left: 0px;
         padding-top: 64px;
+        background-color: transparent;
 
         a {
             text-decoration: none;
@@ -102,5 +103,46 @@
     }
     100% {
         top: 350px;
+    }
+}
+@media (max-width: 1050px) {
+    h1 {
+        font-size: 86px !important;
+    }
+    .underline {
+        width: 80% !important;
+        .line{
+            width: 100%;
+        }
+        h2{
+            font-size: 28px !important;
+            width: auto;
+            background-color: transparent;
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    h1 {
+        font-size: 38px !important;
+    }
+    .underline {
+        width: 60% !important;
+        .line{
+            width:100% !important;
+        }
+        h2{
+            font-size: 18px !important;
+            background-color: transparent;
+        }
+    }
+    .contact-mail {
+        padding-top: 0 !important;
+    }
+}
+@media (max-width: 450px) {
+    .scroll-down{
+        position: relative;
+        left: -115px;
     }
 }

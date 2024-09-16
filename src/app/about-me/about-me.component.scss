@@ -69,6 +69,7 @@
 
         .image {
             position: relative;
+
             .me {
                 position: absolute;
                 width: 550px;
@@ -95,4 +96,60 @@
         }
     }
 
+}
+
+@media (max-width: 1050px) {
+    h1 {
+        font-size: 48px !important;
+    }
+
+    p {
+        font-size: 18px !important;
+    }
+
+    .me {
+        height: 350px !important;
+        width: auto !important;
+    }
+
+    .border {
+        height: 350px !important;
+        width: 350px !important;
+    }
+}
+
+
+@media (max-width: 750px) {
+    .about-me {
+        padding: 18px !important;
+
+    }
+
+    .about-me-main {
+        flex-direction: column !important;
+        align-items: center !important;
+
+        .about-me-info {
+            width: 100% !important;
+        }
+
+        .image {
+            width: 400px !important;
+        }
+    }
+
+}
+
+@media (max-width: 450px) {
+    .me {
+        height: 250px !important;
+        width: auto !important;
+    }
+
+    .border {
+        display: none;
+    }
+    .image {
+        left: 20% !important;
+    }
 }
