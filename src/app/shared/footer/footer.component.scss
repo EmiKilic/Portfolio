@@ -63,7 +63,6 @@
             border-bottom: 2px solid white !important;
             color: white;
             padding: 10px 5px;
-            margin-bottom: 20px;
             font-size: 16px;
             position: relative;
         
@@ -128,7 +127,7 @@
             }
         }
 
-        button {
+        .submit {
             position: relative;
             width: 210px;
             height: 68px;
@@ -150,6 +149,14 @@
             }
         }
 
+        span {
+            width: 100%;
+            font-family: 'Overpass';
+            font-size: 12px;
+            font-weight: 400;
+            color: #E61C40;
+            background-color: transparent;
+        }
     }
 
     .links {
@@ -170,7 +177,7 @@
 
             .initials {
                 height: 30px;
-                background-color: #FFFCF3;
+                background-color: transparent;
                 z-index: 99;
             }
 

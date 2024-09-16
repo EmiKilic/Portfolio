@@ -1,29 +1,42 @@
 <div class="footer" id="footer">
     <img class="rectangle" src="assets/about-me/scroll-down/rectangle-second.png" alt="">
     <h1>Say Hi!</h1>
-    <div class="form">
+    <form class="form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <title>Want to discuss a new project?</title>
         <h2>Say hello! let's discuss your ideas and make it happen</h2>
-        <input class="name" type="text" placeholder="Your name">
-        <input class="email" type="email" placeholder="Your email">
-        <textarea class="message" type="text" placeholder="Your message"></textarea>
+
+        <input [(ngModel)]="contactData.name" required class="name" #name="ngModel" for="name" type="text" placeholder="Your name" name="nam">
+        @if (!name.valid && name.touched ) {
+            <span>Please enter a name</span>
+        }
+
+        <input [(ngModel)]="contactData.email" required class="email" for="mail" #mail="ngModel" type="email" placeholder="Your email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" name="mail">
+        @if (!mail.valid && mail.touched ) {
+            <span>Please enter a valid mail</span>
+        }
+
+        <textarea [(ngModel)]="contactData.message" minlength="4" required class="message" #message="ngModel" for="message" placeholder="Your message" name="message"></textarea>
+        @if (!message.valid && message.touched ) {
+            <span>Please enter a message</span>
+        }
+
         <div class="privacy-policy">
-            <input class="checkbox" type="checkbox" id="checkbox1" name="vehicle1" value="Bike">
+            <input class="checkbox" type="checkbox" id="checkbox1" required name="vehicle1" value="Bike">
             <label for="checkbox1">I've read the <a href="">privacy policy </a>and agree to the processing of my data as outlined.</label>
         </div>
-        <button>Send message</button>
-    </div>
+        <input class="submit" type="submit" value="Send message">
+    </form>
 
     <div class="links">
         <div class="bottom-left">
-            <img class="initials" src="assets/header/initials/initials_EK.png" alt="">
+            <img class="initials" src="assets/header/initials/initials-version_2.png" alt="">
             <div class="background">
                 <p class="text">© Emirhan Kilic 2024</p>
             </div>
         </div>
         <div class="bottom-right">
             <div class="arrow-down">
-                <img src="assets/about-me/scroll-down/arrow-up.png" alt="">
+                <a href="#section-1" style="background-color: transparent;"><img src="assets/about-me/scroll-down/arrow-up.png" alt=""></a>
             </div>
             <div class="socials">
             <img src="assets/about-me/scroll-down/git.png" alt="">
