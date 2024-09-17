@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChild, ElementRef } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HeaderComponent } from '../header/header.component';
 import { HeaderFooterService } from '../header-footer.service';
@@ -15,11 +15,12 @@ import { HeaderFooterService } from '../header-footer.service';
 export class FooterComponent {
   constructor(private sharedService: HeaderFooterService) {}
   http = inject(HttpClient);
-
+  @ViewChild('confirmationMessage') confirmationMessage!: ElementRef;
   contactData = {
     name: '',
     email: '',
     message: '',
+    privacyChecked: false,
   };
 
   mailTest = true;
@@ -35,6 +36,7 @@ export class FooterComponent {
     },
   };
 
+
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http
@@ -42,6 +44,7 @@ export class FooterComponent {
         .subscribe({
           next: (response) => {
             ngForm.resetForm();
+            this.showConfirmationMessage();
           },
           error: (error) => {
             console.error(error);
@@ -50,9 +53,21 @@ export class FooterComponent {
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       ngForm.resetForm();
+      this.showConfirmationMessage();
     }
   }
 
+  showConfirmationMessage() {
+    this.confirmationMessage.nativeElement.style.display = 'block';
+
+    setTimeout(() => {
+      this.confirmationMessage.nativeElement.style.display = 'none';
+    }, 1500);
+  }
+
+
+
+  
   showImp(): void {
     const imprintElement = document.getElementById('imprint') as HTMLDivElement;
     if (imprintElement) {
