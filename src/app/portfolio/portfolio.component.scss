@@ -38,14 +38,12 @@
         gap: 80px;
         position: relative;
         padding-bottom: 50px;
+
         &:hover {
 
             .right-border-image {
                 display: block !important;
-                transition: 0.3s ease;
                 z-index: 10;
-                rotate: 0deg !important;
-                transform: scale(1.5) !important;
             }
 
             .join-black-white {
@@ -58,7 +56,7 @@
                 z-index: 0;
             }
 
-            .text-one{
+            .text-one {
                 z-index: 1;
                 left: 0px !important;
             }
@@ -102,6 +100,7 @@
                 top: 40%;
                 z-index: 10;
                 right: -28px;
+                transition: 0.3s ease;
                 background-color: transparent;
             }
 
@@ -113,6 +112,7 @@
                 background-color: transparent;
             }
         }
+
         .order {
             position: absolute;
             top: 0px;
@@ -133,6 +133,7 @@
             font-weight: 700;
             margin: 0;
         }
+
         .text-one {
             position: relative;
             left: -800px;
@@ -144,7 +145,7 @@
             transition: 0.3s ease;
             z-index: -1;
 
-            
+
 
             .title {
                 font-family: 'Syne';
@@ -167,7 +168,7 @@
                 font-weight: 400;
             }
 
-            a{
+            a {
                 width: 210px;
                 height: 68px;
             }
@@ -192,59 +193,86 @@
         }
     }
 }
+
+.rotate-animation {
+    animation: rotateAndScale 0.5s ease-in-out forwards;
+}
+
+@keyframes rotateAndScale {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+
+    to {
+        transform: scale(1.5) rotate(-115deg);
+    }
+}
+
 @media (max-width: 1600px) {
     .project-one {
         background-color: transparent !important;
+
         .text-one {
             background-color: transparent !important;
+
             p {
                 background-color: transparent !important;
             }
         }
     }
-    .order-left, .order {
+
+    .order-left,
+    .order {
         top: -45px !important;
         background-color: transparent !important;
-    } 
+    }
 }
+
 @media (max-width: 1050px) {
     .title {
         font-size: 28px !important;
     }
+
     .skills-used {
         font-size: 18px !important;
     }
+
     button {
         width: 150px !important;
         height: 68px;
     }
-  }
-  
-  @media (max-width: 750px) {
+}
+
+@media (max-width: 750px) {
     .project-one {
         flex-direction: column;
     }
-    .order-left, .order {
+
+    .order-left,
+    .order {
         top: -45px !important;
         background-color: transparent !important;
-    } 
+    }
+
     .project-reverse {
         flex-direction: column-reverse !important;
     }
+
     .picture-one {
-     top: 35px !important;   
+        top: 35px !important;
     }
 
     h1 {
         font-size: 38px !important;
     }
+
     h2 {
         font-size: 28px !important;
     }
-  }
-  
-  @media (max-width: 450px) {
+}
+
+@media (max-width: 450px) {
     h2 {
         font-size: 16px !important;
     }
-  }
+}

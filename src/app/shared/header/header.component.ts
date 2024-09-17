@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { FooterComponent } from '../footer/footer.component';
+import { HeaderFooterService } from '../header-footer.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FooterComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
@@ -24,8 +26,11 @@ export class HeaderComponent {
   private isNavOpen = false;
   private interval: any;
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
-
+  constructor(
+    private renderer: Renderer2,
+    private el: ElementRef,
+    private sharedService: HeaderFooterService
+  ) {}
   toggleNav() {
     const overlay = this.el.nativeElement.querySelector('#myNav');
     this.isNavOpen = !this.isNavOpen;
@@ -74,5 +79,13 @@ export class HeaderComponent {
     if (this.interval) {
       clearInterval(this.interval);
     }
+  }
+
+  hideImp() {
+    this.sharedService.hideImp();
+  }
+
+  hidePol() {
+    this.sharedService.hidePol();
   }
 }

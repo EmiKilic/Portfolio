@@ -47,6 +47,7 @@
   .skills {
     width: 70%;
     display: flex;
+    justify-content: center;
     flex-direction: row !important;
     flex-wrap: wrap;
     padding-top: 100px;
@@ -151,7 +152,7 @@
     width: 90% !important;
 
     .skills {
-      gap: 60px !important;
+      gap: 50px !important;
     }
   }
 

@@ -1,11 +1,14 @@
 .mouse-circle {
-    position: fixed;
-    width: 30px; 
-    height: 30px;
-    background-color: rgba(75, 71, 255, 0.7);
-    border-radius: 50%;
-    pointer-events: none;
-    transition: transform 0.1s ease-in-out;
-    z-index: 9999999;
-  }
-  
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(75, 71, 255, 0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.1s ease-in-out;
+  z-index: 9999999;
+}
+
+.mouse-circle.dark {
+  background-color: rgba(30, 28, 150, 0.7);
+}

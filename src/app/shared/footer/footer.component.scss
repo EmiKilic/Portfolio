@@ -81,6 +81,10 @@
             border-right: 2px solid white;
             transition: 0.3s ease;
             }
+
+            &:hover::placeholder {
+                font-weight: 700;
+            }
         }
 
         
@@ -220,6 +224,67 @@
                 font-size: 22px;
                 font-family: 'Overpass';
                 font-weight: 400;
+                
+            }
+            .text-hover:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .imprint {
+        overflow-y: scroll;
+        position: absolute;
+        background-color: #FFFCF3;
+        z-index: 99;
+        height: 80vh;
+        width: 80vw;
+        margin-bottom: 148px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        font-family: 'Overpass';
+        border: 1px solid #4B47FF;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        .cross {
+            background-color: transparent;
+            position: absolute;
+            display: flex;
+            justify-content: end;
+            top: 18px;
+            right: 36px;
+            width: 50px;
+            font-size: 48px;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.2);
+            }
+        }
+        h2 {
+            background-color: transparent;
+            font-family: 'Syne';
+            font-weight: 600;
+            font-size: 68px;
+            margin: 16px;
+        }
+        h3 {
+            margin: 12px;
+            font-size: 32px;
+        }
+        p {
+            margin: 8px;
+            font-size: 16px;
+        }
+        a {
+            padding: 5px;
+            text-decoration: none;
+            color: #4B47FF;
+            &:hover {
+                text-decoration: underline;
             }
         }
     }
