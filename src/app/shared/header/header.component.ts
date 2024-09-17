@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderFooterService } from '../header-footer.service';
+import { TranslaterService } from '../../translater.service';
 
 @Component({
   selector: 'app-header',
@@ -29,7 +30,8 @@ export class HeaderComponent {
   constructor(
     private renderer: Renderer2,
     private el: ElementRef,
-    private sharedService: HeaderFooterService
+    private sharedService: HeaderFooterService,
+    private translate: TranslaterService
   ) {}
   toggleNav() {
     const overlay = this.el.nativeElement.querySelector('#myNav');
@@ -87,5 +89,13 @@ export class HeaderComponent {
 
   hidePol() {
     this.sharedService.hidePol();
+  }
+
+  translateDE() {
+    this.translate.headerDE();
+  }
+
+  translateEng() {
+    this.translate.headerEng();
   }
 }

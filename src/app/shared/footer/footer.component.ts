@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Component, inject, ViewChild, ElementRef } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HeaderComponent } from '../header/header.component';
@@ -15,6 +15,7 @@ import { HeaderFooterService } from '../header-footer.service';
 export class FooterComponent {
   constructor(private sharedService: HeaderFooterService) {}
   http = inject(HttpClient);
+  
   @ViewChild('confirmationMessage') confirmationMessage!: ElementRef;
   contactData = {
     name: '',
@@ -23,33 +24,33 @@ export class FooterComponent {
     privacyChecked: false,
   };
 
-  mailTest = true;
+  mailTest = false;
 
   post = {
-    endPoint: 'https://emirhan-kilic.de/sendMail.php',
+    endPoint: 'http://emirhan-kilic.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
-      headers: {
-        'Content-Type': 'text/plain',
-        responseType: 'text',
-      },
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+      responseType: 'text' as 'json',
     },
   };
-
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http
-        .post(this.post.endPoint, this.post.body(this.contactData))
+        .post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
         .subscribe({
           next: (response) => {
+            console.log('Email sent successfully:', response);
             ngForm.resetForm();
             this.showConfirmationMessage();
           },
           error: (error) => {
-            console.error(error);
+            console.error('Error sending email:', error);
           },
-          complete: () => console.info('send post complete'),
+          complete: () => console.info('Post complete'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       ngForm.resetForm();
@@ -65,9 +66,6 @@ export class FooterComponent {
     }, 1500);
   }
 
-
-
-  
   showImp(): void {
     const imprintElement = document.getElementById('imprint') as HTMLDivElement;
     if (imprintElement) {
@@ -81,9 +79,9 @@ export class FooterComponent {
   }
 
   showPol(): void {
-    const imprintElement = document.getElementById('policy') as HTMLDivElement;
-    if (imprintElement) {
-      imprintElement.style.display = 'block';
+    const policyElement = document.getElementById('policy') as HTMLDivElement;
+    if (policyElement) {
+      policyElement.style.display = 'block';
       document.body.style.overflowY = 'hidden';
     }
   }

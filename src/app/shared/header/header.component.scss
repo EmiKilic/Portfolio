@@ -52,8 +52,8 @@
     img {
         height: 40px;
         width: auto;
-        padding-left: 64px;
-        padding-right: 64px;
+        margin-left: 64px;
+        margin-right: 64px;
         cursor: pointer;
     }
 
@@ -61,6 +61,18 @@
         height: 50px;
         width: auto;
 
+    }
+
+    .top-right-header {
+        display: flex;
+        p{
+            font-family: 'Syne';
+            padding-left: 8px;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.2)
+            }
+        }
     }
 }
 

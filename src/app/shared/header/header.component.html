@@ -1,26 +1,35 @@
 <div class="header" style="position: fixed; z-index: 9999; top: 0;">
-    <a href="#section-1" (click)="hideImp(); hidePol()"><img class="initial" src="assets/header/initials/initials_EK.png" alt=""></a>
+    <a href="#section-1" (click)="hideImp(); hidePol()"><img class="initial"
+            src="assets/header/initials/initials_EK.png" alt=""></a>
     <span></span>
-    
-    <img (click)="toggleNav(); hideImp(); hidePol()" [src]="currentImage" alt="">
+    <div class="top-right-header">
+        <p (click)="translateDE()">DE</p>
+        <p (click)="translateEng()">EN</p>
+        <img (click)="toggleNav(); hideImp(); hidePol()" [src]="currentImage" alt="">
+    </div>
 </div>
 
 <div id="myNav" class="overlay">
     <div class="overlay-content">
-        <a (click)="toggleNav()" href="#about"><span></span>About me</a>
-        <a (click)="toggleNav()" href="#skills"><span></span>My skills</a>
-        <a (click)="toggleNav()" href="#projects"><span></span>Portfolio</a>
+        <a (click)="toggleNav()" href="#about" id="navAbout"><span></span>About me</a>
+        <a (click)="toggleNav()" href="#skills" id="navSkill"><span></span>My skills</a>
+        <a (click)="toggleNav()" href="#projects" id="navPort"><span></span>Portfolio</a>
     </div>
     <div class="footer">
         <img class="rectangle" src="assets/about-me/scroll-down/rectangle.png" alt="">
         <div class="hey">
-            <h1>Say Hi!</h1>
-            <a (click)="toggleNav()" href="#footer" style="text-decoration: none;"><h2>emirhan_kilic&#64;outlook.de</h2></a>
+            <h1 id="navHallo">Say Hi!</h1>
+            <a (click)="toggleNav()" href="#footer" style="text-decoration: none;">
+                <h2>emirhan_kilic&#64;outlook.de</h2>
+            </a>
         </div>
         <div class="socials">
-            <a href="https://github.com/EmiKilic" target="_blank" rel="noopener noreferrer" style="background-color: transparent;"><img src="assets/about-me/scroll-down/git.png" alt=""></a>
-            <a (click)="toggleNav()" href="#footer" style="background-color: transparent;"><img src="assets/about-me/scroll-down/mail.png" alt=""></a>
-            <a href="https://www.linkedin.com/in/emirhan-kilic-a16461265/" target="_blank" rel="noopener noreferrer" style="background-color: transparent;"><img src="assets/about-me/scroll-down/linked.png" alt=""></a>
+            <a href="https://github.com/EmiKilic" target="_blank" rel="noopener noreferrer"
+                style="background-color: transparent;"><img src="assets/about-me/scroll-down/git.png" alt=""></a>
+            <a (click)="toggleNav()" href="#footer" style="background-color: transparent;"><img
+                    src="assets/about-me/scroll-down/mail.png" alt=""></a>
+            <a href="https://www.linkedin.com/in/emirhan-kilic-a16461265/" target="_blank" rel="noopener noreferrer"
+                style="background-color: transparent;"><img src="assets/about-me/scroll-down/linked.png" alt=""></a>
         </div>
     </div>
 </div>

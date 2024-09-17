@@ -1,32 +1,34 @@
 <div class="footer" id="footer">
     <img class="rectangle" src="assets/about-me/scroll-down/rectangle-second.png" alt="">
-    <h1>Say Hi!</h1>
+    <h1 id="footerHey">Say Hi!</h1>
     <form class="form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-        <title>Want to discuss a new project?</title>
-        <h2>Say hello! let's discuss your ideas and make it happen</h2>
+        <title id="footerTitle">Want to discuss a new project?</title>
+        <h2 id="footerSeconTitle">Say hello! let's discuss your ideas and make it happen</h2>
 
         <input [(ngModel)]="contactData.name" required class="name" #name="ngModel" for="name" type="text"
             placeholder="Your name" name="nam">
         @if (!name.valid && name.touched ) {
-        <span>Please enter a name</span>
+        <span id="footerErrorOne">Please enter a name</span>
         }
 
         <input [(ngModel)]="contactData.email" required class="email" for="mail" #mail="ngModel" type="email"
             placeholder="Your email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" name="mail">
         @if (!mail.valid && mail.touched ) {
-        <span>Please enter a valid mail</span>
+        <span id="footerErrorMail">Please enter a valid mail</span>
         }
 
         <textarea [(ngModel)]="contactData.message" minlength="4" required class="message" #message="ngModel"
             for="message" placeholder="Your message" name="message"></textarea>
         @if (!message.valid && message.touched ) {
-        <span>Please enter a message</span>
+        <span id="footerErrorMessage">Please enter a message</span>
         }
 
         <div class="privacy-policy">
             <input class="checkbox" [(ngModel)]="contactData.privacyChecked" type="checkbox" id="checkbox1" required
                 name="vehicle1" value="Bike">
-            <label for="checkbox1">I've read the <a href="#" (click)="showPol()">privacy policy </a>and agree to the
+            <label for="checkbox1" id="policyOne">I've read the <a href="#" (click)="showPol()" id="policyTwo">privacy policy 
+
+            </a>and agree to the
                 processing of my data as
                 outlined.</label>
 
@@ -62,7 +64,7 @@
                     style="background-color: transparent;"><img src="assets/about-me/scroll-down/linked.png" alt=""></a>
             </div>
             <div class="background">
-                <p class="text text-hover" (click)="showImp()">Imprint</p>
+                <p class="text text-hover" (click)="showImp()" id="footerImprint">Imprint</p>
             </div>
         </div>
     </div>
