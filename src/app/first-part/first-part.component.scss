@@ -1,7 +1,9 @@
 .section-1 {
     background-color: #FFFCF3;
-    padding-top: 70px;
-    
+    padding-top: 150px;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 .welcome {
@@ -9,8 +11,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100vw;
-    max-width: 100%;
+
 
     h1 {
         font-family: 'Syne';
@@ -143,6 +144,5 @@
 @media (max-width: 450px) {
     .scroll-down{
         position: relative;
-        left: -115px;
     }
 }

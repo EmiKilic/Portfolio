@@ -2,23 +2,30 @@
 
 html,
 body {
-    height: 100%;
-    width: 100vw;
-    max-width: 100%;
-    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
 * {
     background-color: #FFFCF3;
-
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    height: 100%;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }
-
+@media (max-width: 1920px) {
+    body {
+        width: 100%;
+    }
+}
 @font-face {
     font-family: "Syne";
     src: url('../src/fonts/Syne-VariableFont_wght.ttf');

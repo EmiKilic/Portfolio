@@ -4,9 +4,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
 
     .rectangle {
-        width: 100vw;
+        width: 100%;
         height: 80vh;
         position: relative;
         z-index: 1;
@@ -65,21 +68,20 @@
             padding: 10px 5px;
             font-size: 16px;
             position: relative;
-        
-            border-image: none; 
-            mask: 
-                conic-gradient(from 90deg at bottom 8px left 8px)
-                var(--_i, 200%) 0 / 200% var(--_i, 8px) border-box no-repeat,
-                conic-gradient(from 270deg at bottom 8px right 8px)
-                0 var(--_i, 200%) / var(--_i, 8px) 200% border-box no-repeat,
+
+            border-image: none;
+            mask:
+                conic-gradient(from 90deg at bottom 8px left 8px) var(--_i, 200%) 0 / 200% var(--_i, 8px) border-box no-repeat,
+                conic-gradient(from 270deg at bottom 8px right 8px) 0 var(--_i, 200%) / var(--_i, 8px) 200% border-box no-repeat,
                 linear-gradient(#000 0 0) padding-box no-repeat;
             transition: 0.3s, -webkit-mask-position 0.3s 0.3s;
-            &:focus{
+
+            &:focus {
                 --_i: 100%;
-            border-left: 2px solid white;
-            border-top: 2px solid white;
-            border-right: 2px solid white;
-            transition: 0.3s ease;
+                border-left: 2px solid white;
+                border-top: 2px solid white;
+                border-right: 2px solid white;
+                transition: 0.3s ease;
             }
 
             &:hover::placeholder {
@@ -87,43 +89,48 @@
             }
         }
 
-        
+
         ::placeholder {
             color: white;
             opacity: 0.8;
         }
-        
+
         textarea {
             resize: none;
             height: 150px;
         }
-        
+
 
         .privacy-policy {
             background-color: transparent;
             display: flex;
             align-items: center;
             height: auto;
+
             &:hover {
                 .checkbox {
                     accent-color: #4B47FF !important;
                 }
-                a{
+
+                a {
                     font-weight: 500;
                 }
             }
-            .checkbox{
+
+            .checkbox {
                 width: auto;
                 margin: 0;
                 margin-right: 8px;
             }
+
             label {
                 background-color: transparent;
                 color: #FFFCF3;
                 font-family: 'overpass';
                 font-size: 15px;
                 font-weight: 400;
-                a{
+
+                a {
                     text-decoration: none;
                     background-color: transparent;
                     color: #4B47FF;
@@ -143,15 +150,17 @@
             background-color: transparent;
             color: #FFFCF3;
             margin-top: 16px;
-            &.no-hover{
+
+            &.no-hover {
                 cursor: none !important;
-                &:hover{
+
+                &:hover {
                     font-weight: 400;
-                    width: 210px; 
+                    width: 210px;
                     border: 4px solid #BBBBBB;
                 }
             }
-            
+
             &:hover {
                 font-weight: 800;
                 width: 250px;
@@ -170,6 +179,7 @@
             background-color: transparent;
         }
     }
+
     .confirmation {
         position: fixed;
         top: 50%;
@@ -184,7 +194,7 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         transform: translate(-50%, -50%);
     }
-    
+
     .links {
         z-index: 1;
         position: absolute;
@@ -195,7 +205,7 @@
         display: flex;
         justify-content: space-between;
         align-items: end;
-        width: 100vw;
+        width: 100%;
 
         .bottom-left {
             background-color: transparent;
@@ -246,8 +256,9 @@
                 font-size: 22px;
                 font-family: 'Overpass';
                 font-weight: 400;
-                
+
             }
+
             .text-hover:hover {
                 cursor: pointer;
                 text-decoration: underline;
@@ -260,8 +271,8 @@
         position: absolute;
         background-color: #FFFCF3;
         z-index: 99;
-        height: 80vh;
-        width: 80vw;
+        height: 80%;
+        width: 80%;
         margin-bottom: 148px;
         display: flex;
         flex-direction: column;
@@ -269,9 +280,11 @@
         justify-content: center;
         font-family: 'Overpass';
         border: 1px solid #4B47FF;
+
         &::-webkit-scrollbar {
             display: none;
         }
+
         .cross {
             background-color: transparent;
             position: absolute;
@@ -281,11 +294,13 @@
             right: 36px;
             width: 50px;
             font-size: 48px;
+
             &:hover {
                 cursor: pointer;
                 transform: scale(1.2);
             }
         }
+
         h2 {
             background-color: transparent;
             font-family: 'Syne';
@@ -293,18 +308,22 @@
             font-size: 68px;
             margin: 16px;
         }
+
         h3 {
             margin: 12px;
             font-size: 32px;
         }
+
         p {
             margin: 8px;
             font-size: 16px;
         }
+
         a {
             padding: 5px;
             text-decoration: none;
             color: #4B47FF;
+
             &:hover {
                 text-decoration: underline;
             }
@@ -312,47 +331,58 @@
     }
 }
 
-  @media (max-width: 750px) {
+@media (max-width: 750px) {
     h1 {
         font-size: 48px !important;
         top: 40px !important;
         margin-bottom: 0px !important;
     }
+
     title {
         font-size: 18px !important;
     }
+
     h2 {
         font-size: 18px !important;
     }
+
     button {
         width: 150px !important;
     }
+
     .links {
         left: -25px !important;
         bottom: 5px !important;
         justify-content: space-evenly !important;
     }
+
     p {
         margin: 5px !important;
     }
+
     .arrow-down {
         img {
-        width: 30px !important;
-    }}
-    .bottom-left, .bottom-right {
+            width: 30px !important;
+        }
+    }
+
+    .bottom-left,
+    .bottom-right {
         padding: 0 !important;
     }
-  }
-  
-  @media (max-width: 450px) {
+}
+
+@media (max-width: 450px) {
     .rectangle {
-        height: 114vh !important;
+        height: 114% !important;
     }
+
     .footer {
         height: 761px !important;
     }
+
     .submit {
         height: 50px !important;
         width: 180px !important;
     }
-  }
+}

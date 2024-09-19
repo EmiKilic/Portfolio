@@ -8,19 +8,19 @@
         <input [(ngModel)]="contactData.name" required class="name" #name="ngModel" for="name" type="text"
             placeholder="Your name" name="nam">
         @if (!name.valid && name.touched ) {
-        <span id="footerErrorOne">Please enter a name</span>
+        <span >Please enter a name</span>
         }
 
         <input [(ngModel)]="contactData.email" required class="email" for="mail" #mail="ngModel" type="email"
             placeholder="Your email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" name="mail">
         @if (!mail.valid && mail.touched ) {
-        <span id="footerErrorMail">Please enter a valid mail</span>
+        <span >Please enter a valid mail</span>
         }
 
         <textarea [(ngModel)]="contactData.message" minlength="4" required class="message" #message="ngModel"
             for="message" placeholder="Your message" name="message"></textarea>
         @if (!message.valid && message.touched ) {
-        <span id="footerErrorMessage">Please enter a message</span>
+        <span >Please enter a message</span>
         }
 
         <div class="privacy-policy">

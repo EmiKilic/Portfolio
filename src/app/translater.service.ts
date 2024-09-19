@@ -1,23 +1,32 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TranslaterService {
+  constructor() {}
 
-  constructor() { }
-
-  headerDE() {
+  headerDEOne() {
     let navAbout = document.getElementById('navAbout') as HTMLElement;
     let navSkill = document.getElementById('navSkill') as HTMLElement;
     let navPort = document.getElementById('navPort') as HTMLElement;
     let navHallo = document.getElementById('navHallo') as HTMLElement;
-    let firstPartTitle = document.getElementById('firstPartTitle') as HTMLElement;
-    let firstPartScrollDown = document.getElementById('firstPartScrollDown') as HTMLElement;
+    let firstPartTitle = document.getElementById(
+      'firstPartTitle'
+    ) as HTMLElement;
+    let firstPartScrollDown = document.getElementById(
+      'firstPartScrollDown'
+    ) as HTMLElement;
     let AboutMeTitle = document.getElementById('AboutMeTitle') as HTMLElement;
-    let AboutMeDescription = document.getElementById('AboutMeDescription') as HTMLElement;
-    let AboutMeDescriptionTwo = document.getElementById('AboutMeDescriptionTwo') as HTMLElement;
-    let AboutMeLocation = document.getElementById('AboutMeLocation') as HTMLElement;
+    let AboutMeDescription = document.getElementById(
+      'AboutMeDescription'
+    ) as HTMLElement;
+    let AboutMeDescriptionTwo = document.getElementById(
+      'AboutMeDescriptionTwo'
+    ) as HTMLElement;
+    let AboutMeLocation = document.getElementById(
+      'AboutMeLocation'
+    ) as HTMLElement;
     let AboutMeRemote = document.getElementById('AboutMeRemote') as HTMLElement;
     let lassReden = document.getElementById('lassReden') as HTMLElement;
     let skillsSkills = document.getElementById('skillsSkills') as HTMLElement;
@@ -25,20 +34,7 @@ export class TranslaterService {
     let skillsContact = document.getElementById('skillsContact') as HTMLElement;
     let sillsLearnTwo = document.getElementById('sillsLearnTwo') as HTMLElement;
     let projectIntro = document.getElementById('projectIntro') as HTMLElement;
-    let descriptionJoin = document.getElementById('descriptionJoin') as HTMLElement;
-    let descriptionElPolloLoco = document.getElementById('descriptionElPolloLoco') as HTMLElement;
-    let descriptionPortfolio = document.getElementById('descriptionPortfolio') as HTMLElement;
-    let footerHey = document.getElementById('footerHey') as HTMLElement;
-    let footerTitle = document.getElementById('footerTitle') as HTMLElement;
-    let footerSeconTitle = document.getElementById('footerSeconTitle') as HTMLElement;
-    let footerErrorOne = document.getElementById('footerErrorOne') as HTMLElement;
-    let footerErrorMail = document.getElementById('footerErrorMail') as HTMLElement;
-    let footerErrorMessage = document.getElementById('footerErrorMessage') as HTMLElement;
-    let policyOne = document.getElementById('policyOne') as HTMLElement;
-    let policyTwo = document.getElementById('policyTwo') as HTMLElement;
-    let confirmation = document.getElementById('confirmation') as HTMLElement;
-    let footerImprint = document.getElementById('footerImprint') as HTMLElement;
-    
+
     navAbout.innerHTML = `Über mich`;
     navSkill.innerHTML = `Meine Skills`;
     navPort.innerHTML = `Portfolio`;
@@ -52,38 +48,33 @@ export class TranslaterService {
     AboutMeRemote.innerHTML = `Offen für Remote-Arbeit`;
     lassReden.innerHTML = `Lass reden`;
     skillsSkills.innerHTML = `Meine Skills`;
-    skillsLearn.innerHTML = `Du siehst nicht den benötigten Skill?`; 
-    skillsContact.innerHTML = `Kontaktiere mich!`; 
-    sillsLearnTwo.innerHTML = `Ich bin immer bereit zu lernen!`; 
-    projectIntro.innerHTML = `Entdecke hier eine Auswahl meiner Arbeit - Interagiere mit Projekten, um meine Fähigkeiten in Aktion zu sehen`; 
-    descriptionJoin.innerHTML = `Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstelle und organisiere Aufgaben per Drag & Drop-Funktionen, weise Benutzer und Kategorien hinzu`; 
-    descriptionElPolloLoco.innerHTML = `Ein einfaches Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe beim Finden von Münzen und Flaschen, um gegen die verrückten Hühner anzukommen`; 
-    descriptionPortfolio.innerHTML = `Ein Schaufenster meiner Projekte und Fähigkeiten, die ich mit modernen Webtechnologien erstellt habe. Merkmale Responsive Design, interaktive Elemente und reibungslose Navigation für ein ansprechendes Nutzererlebnis. Demonstriert die Beherrschung von Angular, TypeScript, HTML, CSS`; 
-    footerHey.innerHTML = `Hey!`; 
-    footerTitle.innerHTML = `Möchtest du ein Projekt besprechen?`; 
-    footerSeconTitle.innerHTML = `Sag hallo! Lass uns deine Ideen besprechen und verwirklichen`; 
-    footerErrorOne.innerHTML = `Bitte gib einen Namen ein`; 
-    footerErrorMail.innerHTML = `Bitte gib eine gültige Mail an`; 
-    footerErrorMessage.innerHTML = `Bitte gib eine Nachricht ein`; 
-    policyOne.innerHTML = `Ich habe die`; 
-    policyTwo.innerHTML = `Datenschutzbestimmungen`; 
-    confirmation.innerHTML = `Erfolgreich versendet!`; 
-    footerImprint.innerHTML = `Impressum`; 
-  
+    skillsLearn.innerHTML = `Du siehst nicht den benötigten Skill?`;
+    skillsContact.innerHTML = `Kontaktiere mich!`;
+    sillsLearnTwo.innerHTML = `Ich bin immer bereit zu lernen!`;
+    projectIntro.innerHTML = `Entdecke hier eine Auswahl meiner Arbeit - Interagiere mit Projekten, um meine Fähigkeiten in Aktion zu sehen`;
   }
-
 
   headerEng() {
     let navAbout = document.getElementById('navAbout') as HTMLElement;
     let navSkill = document.getElementById('navSkill') as HTMLElement;
     let navPort = document.getElementById('navPort') as HTMLElement;
     let navHallo = document.getElementById('navHallo') as HTMLElement;
-    let firstPartTitle = document.getElementById('firstPartTitle') as HTMLElement;
-    let firstPartScrollDown = document.getElementById('firstPartScrollDown') as HTMLElement;
+    let firstPartTitle = document.getElementById(
+      'firstPartTitle'
+    ) as HTMLElement;
+    let firstPartScrollDown = document.getElementById(
+      'firstPartScrollDown'
+    ) as HTMLElement;
     let AboutMeTitle = document.getElementById('AboutMeTitle') as HTMLElement;
-    let AboutMeDescription = document.getElementById('AboutMeDescription') as HTMLElement;
-    let AboutMeDescriptionTwo = document.getElementById('AboutMeDescriptionTwo') as HTMLElement;
-    let AboutMeLocation = document.getElementById('AboutMeLocation') as HTMLElement;
+    let AboutMeDescription = document.getElementById(
+      'AboutMeDescription'
+    ) as HTMLElement;
+    let AboutMeDescriptionTwo = document.getElementById(
+      'AboutMeDescriptionTwo'
+    ) as HTMLElement;
+    let AboutMeLocation = document.getElementById(
+      'AboutMeLocation'
+    ) as HTMLElement;
     let AboutMeRemote = document.getElementById('AboutMeRemote') as HTMLElement;
     let lassReden = document.getElementById('lassReden') as HTMLElement;
     let skillsSkills = document.getElementById('skillsSkills') as HTMLElement;
@@ -91,20 +82,7 @@ export class TranslaterService {
     let skillsContact = document.getElementById('skillsContact') as HTMLElement;
     let sillsLearnTwo = document.getElementById('sillsLearnTwo') as HTMLElement;
     let projectIntro = document.getElementById('projectIntro') as HTMLElement;
-    let descriptionJoin = document.getElementById('descriptionJoin') as HTMLElement;
-    let descriptionElPolloLoco = document.getElementById('descriptionElPolloLoco') as HTMLElement;
-    let descriptionPortfolio = document.getElementById('descriptionPortfolio') as HTMLElement;
-    let footerHey = document.getElementById('footerHey') as HTMLElement;
-    let footerTitle = document.getElementById('footerTitle') as HTMLElement;
-    let footerSeconTitle = document.getElementById('footerSeconTitle') as HTMLElement;
-    let footerErrorOne = document.getElementById('footerErrorOne') as HTMLElement;
-    let footerErrorMail = document.getElementById('footerErrorMail') as HTMLElement;
-    let footerErrorMessage = document.getElementById('footerErrorMessage') as HTMLElement;
-    let policyOne = document.getElementById('policyOne') as HTMLElement;
-    let policyTwo = document.getElementById('policyTwo') as HTMLElement;
-    let confirmation = document.getElementById('confirmation') as HTMLElement;
-    let footerImprint = document.getElementById('footerImprint') as HTMLElement;
-    
+
     navAbout.innerHTML = `About me`;
     navSkill.innerHTML = `My skills`;
     navPort.innerHTML = `Portfolio`;
@@ -125,19 +103,56 @@ export class TranslaterService {
     skillsContact.innerHTML = `Contact me`;
     sillsLearnTwo.innerHTML = `I’m always ready to learn!`;
     projectIntro.innerHTML = `Explore a selection of my work here - Interact with projects to see my skills in action`;
+  }
+
+  headerDETwo() {
+    let descriptionJoin = document.getElementById(
+      'descriptionJoin'
+    ) as HTMLElement;
+    let descriptionElPolloLoco = document.getElementById(
+      'descriptionElPolloLoco'
+    ) as HTMLElement;
+    let descriptionPortfolio = document.getElementById(
+      'descriptionPortfolio'
+    ) as HTMLElement;
+    let footerHey = document.getElementById('footerHey') as HTMLElement;
+    let footerTitle = document.getElementById('footerTitle') as HTMLElement;
+    let footerSeconTitle = document.getElementById(
+      'footerSeconTitle'
+    ) as HTMLElement;
+    let footerImprint = document.getElementById('footerImprint') as HTMLElement;
+
+    descriptionJoin.innerHTML = `Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstelle und organisiere Aufgaben per Drag & Drop-Funktionen, weise Benutzer und Kategorien hinzu`;
+    descriptionElPolloLoco.innerHTML = `Ein einfaches Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe beim Finden von Münzen und Flaschen, um gegen die verrückten Hühner anzukommen`;
+    descriptionPortfolio.innerHTML = `Ein Schaufenster meiner Projekte und Fähigkeiten, die ich mit modernen Webtechnologien erstellt habe. Merkmale Responsive Design, interaktive Elemente und reibungslose Navigation für ein ansprechendes Nutzererlebnis. Demonstriert die Beherrschung von Angular, TypeScript, HTML, CSS`;
+    footerHey.innerHTML = `Hey!`;
+    footerTitle.innerHTML = `Möchtest du ein Projekt besprechen?`;
+    footerSeconTitle.innerHTML = `Sag hallo! Lass uns deine Ideen besprechen und verwirklichen`;
+    footerImprint.innerHTML = `Impressum`;
+  }
+  headerEngTwo() {
+    let descriptionJoin = document.getElementById(
+      'descriptionJoin'
+    ) as HTMLElement;
+    let descriptionElPolloLoco = document.getElementById(
+      'descriptionElPolloLoco'
+    ) as HTMLElement;
+    let descriptionPortfolio = document.getElementById(
+      'descriptionPortfolio'
+    ) as HTMLElement;
+    let footerHey = document.getElementById('footerHey') as HTMLElement;
+    let footerTitle = document.getElementById('footerTitle') as HTMLElement;
+    let footerSeconTitle = document.getElementById(
+      'footerSeconTitle'
+    ) as HTMLElement;
+    let footerImprint = document.getElementById('footerImprint') as HTMLElement;
+
     descriptionJoin.innerHTML = `Task Manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories`;
     descriptionElPolloLoco.innerHTML = `A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to find coins and Salsa bottles to fight against the crazy Chickens`;
     descriptionPortfolio.innerHTML = `A showcase of my projects and skills built with modern web technologies. Features responsive design, interactive elements, and smooth navigation to provide an engaging user experience. Demonstrates proficiency in Angular, TypeScript, HTML, CSS`;
     footerHey.innerHTML = `Say Hi!`;
     footerTitle.innerHTML = `Want to discuss a new project?`;
     footerSeconTitle.innerHTML = `Say hello! let's discuss your ideas and make it happen`;
-    footerErrorOne.innerHTML = `Please enter a name`;
-    footerErrorMail.innerHTML = `Please enter a valid mail`;
-    footerErrorMessage.innerHTML = `Please enter a message`;
-    policyOne.innerHTML = `I've read the`;
-    policyTwo.innerHTML = `privacy policy`;
-    confirmation.innerHTML = `Successfully sent!`;
     footerImprint.innerHTML = `Imprint`;
-  
-                  }
+  }
 }

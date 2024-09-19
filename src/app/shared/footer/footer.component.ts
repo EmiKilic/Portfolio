@@ -27,7 +27,7 @@ export class FooterComponent {
   mailTest = false;
 
   post = {
-    endPoint: 'http://emirhan-kilic.de/sendMail.php',
+    endPoint: 'https://emirhan-kilic.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: new HttpHeaders({

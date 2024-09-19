@@ -92,10 +92,12 @@ export class HeaderComponent {
   }
 
   translateDE() {
-    this.translate.headerDE();
+    this.translate.headerDEOne();
+    this.translate.headerDETwo();
   }
 
   translateEng() {
     this.translate.headerEng();
+    this.translate.headerEngTwo();
   }
 }
