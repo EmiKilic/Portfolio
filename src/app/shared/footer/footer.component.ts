@@ -13,7 +13,6 @@ import { HeaderFooterService } from '../header-footer.service';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-  constructor(private sharedService: HeaderFooterService) {}
   http = inject(HttpClient);
   
   @ViewChild('confirmationMessage') confirmationMessage!: ElementRef;
@@ -66,27 +65,14 @@ export class FooterComponent {
     }, 1500);
   }
 
-  showImp(): void {
-    const imprintElement = document.getElementById('imprint') as HTMLDivElement;
-    if (imprintElement) {
-      imprintElement.style.display = 'block';
-      document.body.style.overflowY = 'hidden';
-    }
+  showImp() {
+    window.location.href = 'https://emirhan-kilic.de/app/imprint/imprint.component.html';
   }
 
-  hideImp() {
-    this.sharedService.hideImp();
-  }
 
   showPol(): void {
-    const policyElement = document.getElementById('policy') as HTMLDivElement;
-    if (policyElement) {
-      policyElement.style.display = 'block';
-      document.body.style.overflowY = 'hidden';
-    }
+    window.location.href = 'https://emirhan-kilic.de/app/polic/polic.component.html';
   }
 
-  hidePol() {
-    this.sharedService.hidePol();
-  }
+  
 }

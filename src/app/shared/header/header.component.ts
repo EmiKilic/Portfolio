@@ -36,7 +36,7 @@ export class HeaderComponent {
   toggleNav() {
     const overlay = this.el.nativeElement.querySelector('#myNav');
     this.isNavOpen = !this.isNavOpen;
-
+  
     if (this.isNavOpen) {
       this.renderer.setStyle(overlay, 'display', 'flex');
       this.renderer.addClass(document.body, 'no-scroll');
@@ -47,6 +47,7 @@ export class HeaderComponent {
       this.startCloseAnimation();
     }
   }
+  
 
   startOpenAnimation() {
     let index = 0;

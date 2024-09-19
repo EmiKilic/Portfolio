@@ -1,10 +1,13 @@
-
-
 <app-header></app-header>
-<app-first-part ></app-first-part>
-<app-about-me ></app-about-me>
-<app-my-skills style="height: auto;"></app-my-skills>
-<app-portfolio style="height: auto;"></app-portfolio>
-<router-outlet style="height: auto;"></router-outlet>
 <app-mouse-follower style="height: auto;"></app-mouse-follower>
+
+<div *ngIf="!displayOnlyHeaderFooter" style="display: flex; flex-direction: column;">
+  <app-first-part></app-first-part>
+  <app-about-me></app-about-me>
+  <app-my-skills style="height: auto;"></app-my-skills>
+  <app-portfolio style="height: auto;"></app-portfolio>
+</div>
+
+<router-outlet></router-outlet>
+
 <app-footer style="bottom: 0;"></app-footer>
