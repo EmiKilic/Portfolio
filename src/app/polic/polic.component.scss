@@ -12,6 +12,7 @@
     font-family: 'Overpass';
     margin: 0 auto;
     padding-top: 100px;
+    position: relative;
 
     &::-webkit-scrollbar {
         display: none;
@@ -64,5 +65,11 @@
         &:hover {
             text-decoration: underline;
         }
+    }
+}
+
+@media (max-width: 450px) {
+    h2 {
+        font-size: 48px !important;
     }
 }
