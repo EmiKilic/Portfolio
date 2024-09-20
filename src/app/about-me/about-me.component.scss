@@ -71,6 +71,8 @@
 
         .image {
             position: relative;
+        padding-top: 18px;
+
 
             .me {
                 position: absolute;
@@ -99,7 +101,17 @@
     }
 
 }
+@media (max-width: 1350px) {
+    .me {
+        height: 450px !important;
+        width: 450px !important;
+    }
 
+    .border {
+        height: 450px !important;
+        width: 450px !important;
+    }
+}
 @media (max-width: 1050px) {
     h1 {
         font-size: 48px !important;
@@ -111,7 +123,7 @@
 
     .me {
         height: 350px !important;
-        width: auto !important;
+        width: 350px !important;
     }
 
     .border {
@@ -143,15 +155,22 @@
 }
 
 @media (max-width: 450px) {
+    .about-me{
+        width: 320px ;
+    }
     .me {
         height: 250px !important;
-        width: auto !important;
+        width: 250px !important;
     }
 
     .border {
         display: none;
     }
+
     .image {
-        left: 20% !important;
+        left: 25%;
+    }
+    h1 {
+        font-size: 38px !important;
     }
 }

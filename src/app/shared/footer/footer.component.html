@@ -4,39 +4,41 @@
     <form class="form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <title id="footerTitle">Want to discuss a new project?</title>
         <h2 id="footerSeconTitle">Say hello! let's discuss your ideas and make it happen</h2>
-
-        <input [(ngModel)]="contactData.name" required class="name" #name="ngModel" for="name" type="text"
-            placeholder="Your name" name="nam">
-        @if (!name.valid && name.touched ) {
-        <span >Please enter a name</span>
-        }
-
-        <input [(ngModel)]="contactData.email" required class="email" for="mail" #mail="ngModel" type="email"
-            placeholder="Your email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" name="mail">
-        @if (!mail.valid && mail.touched ) {
-        <span >Please enter a valid mail</span>
-        }
-
+    
+        <!-- Name Input -->
+        <input [(ngModel)]="contactData.name" required class="name" #name="ngModel" type="text"
+            placeholder="Your name*" name="name">
+        <span *ngIf="name.invalid && name.touched">Please enter a name</span>
+    
+        <!-- Email Input -->
+        <input [(ngModel)]="contactData.email" required class="email" #mail="ngModel" type="email"
+            placeholder="Your email*" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" name="email">
+        <span *ngIf="mail.invalid && mail.touched">Please enter a valid email</span>
+    
+        <!-- Message Input -->
         <textarea [(ngModel)]="contactData.message" minlength="4" required class="message" #message="ngModel"
-            for="message" placeholder="Your message" name="message"></textarea>
-        @if (!message.valid && message.touched ) {
-        <span >Please enter a message</span>
-        }
-
+            placeholder="Your message*" name="message"></textarea>
+        <span *ngIf="message.invalid && message.touched">Please enter a message</span>
+    
+        <!-- Privacy Policy Checkbox -->
         <div class="privacy-policy">
+            <div style="background-color: transparent;">
             <input class="checkbox" [(ngModel)]="contactData.privacyChecked" type="checkbox" id="checkbox1" required
-                name="vehicle1" value="Bike">
-            <label for="checkbox1" id="policyOne">I've read the <a href="https://emirhan-kilic.de/polic" id="policyTwo">privacy policy 
-
-            </a>and agree to the
-                processing of my data as
-                outlined.</label>
-
+                name="privacyChecked" #privacyChecked="ngModel">
+            <label for="checkbox1" id="policyOne">
+                I've read the <a href="https://emirhan-kilic.de/polic" id="policyTwo">privacy policy</a> and agree to the
+                processing of my data as outlined*
+            </label>
         </div>
+            <span *ngIf="privacyChecked.invalid && privacyChecked.touched">You must agree to the privacy policy</span>
+        </div>
+    
+        <!-- Submit Button -->
         <input [ngClass]="{'no-hover': !contactForm.valid || !contactData.privacyChecked}"
-            [disabled]="!contactForm.valid && !contactData.privacyChecked" class="submit" type="submit"
+            [disabled]="!contactForm.valid || !contactData.privacyChecked" class="submit" type="submit"
             value="Send message">
     </form>
+    
 
     <div class="confirmation" id="confirmation" #confirmationMessage style="display: none;">
         Successfully sent!

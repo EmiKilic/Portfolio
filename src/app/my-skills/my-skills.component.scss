@@ -44,7 +44,7 @@
     font-family: 'Syne';
     font-size: 78px;
     font-weight: 800;
-    top: -100px;
+    top: -50px;
   }
 
   .skills {
@@ -149,7 +149,8 @@
 @media (max-width: 1050px) {
   h1 {
     font-size: 48px !important;
-    padding-top: 38px;
+    top: -30px !important;
+
   }
   .skills-section {
     width: 90% !important;

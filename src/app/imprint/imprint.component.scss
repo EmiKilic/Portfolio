@@ -32,9 +32,8 @@
             transform: rotate(90deg);
 
             &:hover {
-                transform: rotate(90deg);
                 cursor: pointer;
-                transform: scale(1.2);
+                transform: scale(1.2) rotate(90deg);
             }
         }
     }

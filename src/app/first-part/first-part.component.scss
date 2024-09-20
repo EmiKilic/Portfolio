@@ -46,6 +46,7 @@
 .welcome-second-part {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-left: 64px;
     padding-right: 64px;
     bottom: 0;
@@ -53,8 +54,10 @@
     .contact-mail {
         transform: rotate(-90deg);
         padding-left: 0px;
-        padding-top: 64px;
+        height: 28px;
         background-color: transparent;
+        position: relative;
+        left: -100px;
 
         a {
             text-decoration: none;
@@ -144,5 +147,12 @@
 @media (max-width: 450px) {
     .scroll-down{
         position: relative;
+    }
+    .welcome-second-part {
+        width: 300px;
+        padding: 10px;
+    }
+    .scroll-down {
+        right: 50px;
     }
 }
