@@ -3,12 +3,13 @@ import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
 import { Component, inject, ViewChild, ElementRef } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HeaderComponent } from '../header/header.component';
-import { HeaderFooterService } from '../header-footer.service';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [FormsModule, CommonModule, HttpClientModule, HeaderComponent],
+  imports: [FormsModule, CommonModule, HttpClientModule, HeaderComponent, RouterModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })

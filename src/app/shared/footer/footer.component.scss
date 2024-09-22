@@ -9,7 +9,7 @@
     margin: 0 auto;
 
     .rectangle {
-        width: 100%;
+        width: 100vw !important;
         height: 80vh;
         position: relative;
         z-index: 1;

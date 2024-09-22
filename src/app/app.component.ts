@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { RouterOutlet, Router, NavigationEnd, RouterLink } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { FirstPartComponent } from './first-part/first-part.component';
@@ -16,8 +16,9 @@ import { PolicComponent } from './polic/polic.component';
   standalone: true,
   imports: [
     CommonModule,
-    HeaderComponent,
     RouterOutlet,
+    RouterLink,
+    HeaderComponent,
     FooterComponent,
     FirstPartComponent,
     AboutMeComponent,
@@ -26,10 +27,9 @@ import { PolicComponent } from './polic/polic.component';
     PortfolioComponent, 
     ImprintComponent,
     PolicComponent,
-    RouterModule
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrls: ['./app.component.scss'],
 })
 
 export class AppComponent {
@@ -39,11 +39,7 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        if (this.router.url === '/imprint' || this.router.url === '/polic') {
-          this.displayOnlyHeaderFooter = true;
-        } else {
-          this.displayOnlyHeaderFooter = false;
-        }
+        this.displayOnlyHeaderFooter = (this.router.url === '/imprint' || this.router.url === '/polic');
       }
     });
   }
