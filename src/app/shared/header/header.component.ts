@@ -95,10 +95,14 @@ export class HeaderComponent {
   translateDE() {
     this.translate.headerDEOne();
     this.translate.headerDETwo();
+    this.translate.headerDEThree();
+    this.translate.headerDEPolicy();
   }
 
   translateEng() {
     this.translate.headerEng();
     this.translate.headerEngTwo();
+    this.translate.headerEngThree();
+    this.translate.headerEngPolicy();
   }
 }
