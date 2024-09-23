@@ -26,7 +26,7 @@
             <input class="checkbox" [(ngModel)]="contactData.privacyChecked" type="checkbox" id="checkbox1" required
                 name="privacyChecked" #privacyChecked="ngModel">
             <label for="checkbox1" id="policyOne">
-                I've read the <a [routerLink]="['/polic']" id="policyTwo">privacy policy</a> and agree to the
+                I've read the <a [routerLink]="['/polic']" (click)="scrollUp()" id="policyTwo">privacy policy</a> and agree to the
                 processing of my data as outlined*
             </label>
         </div>
@@ -66,7 +66,7 @@
                     style="background-color: transparent;"><img src="assets/about-me/scroll-down/linked.png" alt=""></a>
             </div>
             <div class="background">
-                <a class="text text-hover" [routerLink]="['/imprint']" id="footerImprint">Imprint</a>
+                <a class="text text-hover" [routerLink]="['/imprint']" (click)="scrollUp()" id="footerImprint">Imprint</a>
             </div>
         </div>
     </div>

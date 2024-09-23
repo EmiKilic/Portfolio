@@ -75,5 +75,7 @@ export class FooterComponent {
     window.location.href = 'https://emirhan-kilic.de/app/polic/polic.component.html';
   }
 
-  
+  scrollUp() {
+    window.scrollTo(0, 0)
+  }
 }
