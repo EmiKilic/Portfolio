@@ -4,6 +4,9 @@ import { Component, inject, ViewChild, ElementRef } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HeaderComponent } from '../header/header.component';
 import { RouterModule } from '@angular/router';
+import { HeaderFooterService } from '../header-footer.service';
+import { TranslaterService } from '../../translater.service';
+import { Router, NavigationEnd } from '@angular/router';
 
 
 @Component({
@@ -14,6 +17,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
+
+  constructor(private router: Router, private translate: TranslaterService) {}
   http = inject(HttpClient);
   
   @ViewChild('confirmationMessage') confirmationMessage!: ElementRef;
@@ -25,6 +30,16 @@ export class FooterComponent {
   };
 
   mailTest = false;
+
+  ngOnInit(): void {
+    this.translate.applyLanguage();
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.translate.applyLanguage(); 
+      }
+    });
+  }
 
   post = {
     endPoint: 'https://emirhan-kilic.de/sendMail.php',
@@ -66,16 +81,10 @@ export class FooterComponent {
     }, 1500);
   }
 
-  showImp() {
-    window.location.href = 'https://emirhan-kilic.de/app/imprint/imprint.component.html';
-  }
 
-
-  showPol(): void {
-    window.location.href = 'https://emirhan-kilic.de/app/polic/polic.component.html';
-  }
 
   scrollUp() {
+    this.translate.applyLanguage();
     window.scrollTo(0, 0)
   }
 }

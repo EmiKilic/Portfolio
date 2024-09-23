@@ -13,6 +13,29 @@ export class TranslaterService {
     }
   }
 
+  setLanguage(language: string) {
+    localStorage.setItem('selectedLanguage', language);
+  }
+
+  getLanguage(): string {
+    return localStorage.getItem('selectedLanguage') || 'en';
+  }
+  
+  applyLanguage() {
+    const language = this.getLanguage();
+    if (language === 'de') {
+      this.headerDEOne();
+      this.headerDETwo();
+      this.headerDEThree();
+      this.headerDEPolicy();
+    } else {
+      this.headerEng();
+      this.headerEngTwo();
+      this.headerEngThree();
+      this.headerEngPolicy();
+    }
+  }
+
   headerDEOne() {
     this.setInnerHTMLById('navAbout', 'Über mich');
     this.setInnerHTMLById('navSkill', 'Meine Skills');

@@ -3,15 +3,15 @@
             src="assets/header/initials/initials_EK.png" alt=""></a>
     <span></span>
     <div class="top-right-header">
-        <p (click)="translateDE()" style="background-color: transparent;">DE</p>
-        <p (click)="translateEng()" style="background-color: transparent;">EN</p>
+        <p (click)="changeLanguage('de')" style="background-color: transparent;">DE</p>
+        <p (click)="changeLanguage('en')" style="background-color: transparent;">EN</p>
         <img (click)="toggleNav();" [src]="currentImage" alt="">
     </div>
 </div>
 
 <div id="myNav" class="overlay">
     <div class="overlay-content">
-        <a (click)="toggleNav()" class="overlay-links" href="#about" id="navAbout"><span></span>About me</a>
+        <a (click)="toggleNav(); scrollUp()" class="overlay-links" href="#about" id="navAbout"><span></span>About me</a>
         <a (click)="toggleNav()" class="overlay-links" href="#skills" id="navSkill"><span></span>My skills</a>
         <a (click)="toggleNav()" class="overlay-links" href="#projects" id="navPort"><span></span>Portfolio</a>
     </div>

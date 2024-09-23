@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { Component, ElementRef, Renderer2, OnInit } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderFooterService } from '../header-footer.service';
 import { TranslaterService } from '../../translater.service';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ import { TranslaterService } from '../../translater.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   burger_menu = [
     'assets/header/burger-menu/burger_1.png',
     'assets/header/burger-menu/burger_2.png',
@@ -28,11 +29,26 @@ export class HeaderComponent {
   private interval: any;
 
   constructor(
+    private router: Router,
     private renderer: Renderer2,
     private el: ElementRef,
     private sharedService: HeaderFooterService,
-    private translate: TranslaterService
+    private translationService: TranslaterService
   ) {}
+
+  ngOnInit(): void {
+    this.translationService.applyLanguage();
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.translationService.applyLanguage();
+      }
+    });
+  }
+  changeLanguage(language: string): void {
+    this.translationService.setLanguage(language);
+    this.translationService.applyLanguage();
+  }
   toggleNav() {
     const overlay = this.el.nativeElement.querySelector('#myNav');
     this.isNavOpen = !this.isNavOpen;
@@ -47,8 +63,11 @@ export class HeaderComponent {
       this.startCloseAnimation();
     }
   }
+  scrollUp() {
+    this.translationService.applyLanguage();
+    window.scrollTo(0, 0)
+  }
   
-
   startOpenAnimation() {
     let index = 0;
     this.clearAnimation();
@@ -92,17 +111,4 @@ export class HeaderComponent {
     this.sharedService.hidePol();
   }
 
-  translateDE() {
-    this.translate.headerDEOne();
-    this.translate.headerDETwo();
-    this.translate.headerDEThree();
-    this.translate.headerDEPolicy();
-  }
-
-  translateEng() {
-    this.translate.headerEng();
-    this.translate.headerEngTwo();
-    this.translate.headerEngThree();
-    this.translate.headerEngPolicy();
-  }
 }
