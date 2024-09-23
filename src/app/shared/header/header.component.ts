@@ -3,12 +3,13 @@ import { Component, ElementRef, Renderer2, OnInit } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderFooterService } from '../header-footer.service';
 import { TranslaterService } from '../../translater.service';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, FooterComponent],
+  imports: [CommonModule, FooterComponent, RouterModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
@@ -30,6 +31,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private renderer: Renderer2,
     private el: ElementRef,
     private sharedService: HeaderFooterService,
@@ -42,6 +44,15 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.translationService.applyLanguage();
+      }
+    });
+
+    this.route.fragment.subscribe((fragment) => {
+      if (fragment) {
+        const element = document.getElementById(fragment);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     });
   }
@@ -109,6 +120,5 @@ export class HeaderComponent implements OnInit {
 
   hidePol() {
     this.sharedService.hidePol();
-  }
-
+  }  
 }

@@ -6,11 +6,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { ImprintComponent } from './imprint/imprint.component';
 import { PolicComponent } from './polic/polic.component';
+import { MainWebsiteComponent } from './main-website/main-website.component';
 
 const routes: Routes = [
   { path: 'imprint', component: ImprintComponent },
   { path: 'polic', component: PolicComponent },
-  { path: '', redirectTo: '/', pathMatch: 'full' }, // Add more routes as needed
+  { path: '', component: MainWebsiteComponent },
 ];
 
 export const appConfig: ApplicationConfig = {

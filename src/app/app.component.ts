@@ -10,6 +10,7 @@ import { MySkillsComponent } from './my-skills/my-skills.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { PolicComponent } from './polic/polic.component';
+import { MainWebsiteComponent } from './main-website/main-website.component';
 
 @Component({
   selector: 'app-root',
@@ -27,20 +28,12 @@ import { PolicComponent } from './polic/polic.component';
     PortfolioComponent, 
     ImprintComponent,
     PolicComponent,
+    MainWebsiteComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 
 export class AppComponent {
-  title = 'Portfolio';
-  displayOnlyHeaderFooter: boolean = false;
 
-  constructor(private router: Router) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.displayOnlyHeaderFooter = (this.router.url === '/imprint' || this.router.url === '/polic');
-      }
-    });
-  }
 }

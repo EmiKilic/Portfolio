@@ -4,7 +4,6 @@ import { Component, inject, ViewChild, ElementRef } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HeaderComponent } from '../header/header.component';
 import { RouterModule } from '@angular/router';
-import { HeaderFooterService } from '../header-footer.service';
 import { TranslaterService } from '../../translater.service';
 import { Router, NavigationEnd } from '@angular/router';
 

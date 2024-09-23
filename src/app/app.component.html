@@ -1,13 +1,6 @@
 <app-header></app-header>
 <app-mouse-follower style="height: auto;"></app-mouse-follower>
 
-<div *ngIf="!displayOnlyHeaderFooter" style="display: flex; flex-direction: column;">
-  <app-first-part style="width: 100%; max-width: 1920px;"></app-first-part>
-  <app-about-me style="width: 100%; max-width: 1920px;"></app-about-me>
-  <app-my-skills style="height: auto;"></app-my-skills>
-  <app-portfolio style="height: auto;"></app-portfolio>
-</div>
-
 <router-outlet></router-outlet>
 
 <app-footer style="bottom: 0;"></app-footer>

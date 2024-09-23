@@ -1,5 +1,5 @@
 <div class="header">
-    <a href="#section-1"><img class="initial"
+    <a [routerLink]="['/']"><img class="initial"
             src="assets/header/initials/initials_EK.png" alt=""></a>
     <span></span>
     <div class="top-right-header">
@@ -11,9 +11,9 @@
 
 <div id="myNav" class="overlay">
     <div class="overlay-content">
-        <a (click)="toggleNav(); scrollUp()" class="overlay-links" href="#about" id="navAbout"><span></span>About me</a>
-        <a (click)="toggleNav()" class="overlay-links" href="#skills" id="navSkill"><span></span>My skills</a>
-        <a (click)="toggleNav()" class="overlay-links" href="#projects" id="navPort"><span></span>Portfolio</a>
+        <a (click)="toggleNav()" class="overlay-links" [routerLink]="'/'" fragment="about" id="navAbout"><span></span>About me</a>
+        <a (click)="toggleNav()" class="overlay-links" [routerLink]="'/'" fragment="skills" id="navSkill"><span></span>My skills</a>
+        <a (click)="toggleNav()" class="overlay-links" [routerLink]="'/'" fragment="projects" id="navPort"><span></span>Portfolio</a>
     </div>
     <div class="footer">
         <img class="rectangle" src="assets/about-me/scroll-down/rectangle.png" alt="">
