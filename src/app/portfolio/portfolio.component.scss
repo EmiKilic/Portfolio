@@ -40,7 +40,7 @@
         min-height: 300px;
         gap: 80px;
         position: relative;
-        padding-bottom: 50px;
+        padding-bottom: 200px;
 
         &:hover {
 
@@ -308,6 +308,7 @@
 @media (max-width: 750px) {
     .project-one {
         flex-direction: column;
+        padding-bottom: 150px !important;
     }
 
     .order-left,
