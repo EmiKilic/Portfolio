@@ -1,7 +1,7 @@
 <div class="footer" id="footer">
     <img class="rectangle" src="assets/about-me/scroll-down/rectangle-second.png" alt="">
     <h1 id="footerHey">Say Hi!</h1>
-    <form class="form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+    <form class="form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" style="gap: 8px;">
         <title id="footerTitle">Want to discuss a new project?</title>
         <h2 id="footerSeconTitle">Say hello! let's discuss your ideas and make it happen</h2>
     
@@ -17,7 +17,7 @@
     
         <!-- Message Input -->
         <textarea [(ngModel)]="contactData.message" minlength="4" required class="message" #message="ngModel"
-            placeholder="Your message*" name="message"></textarea>
+            placeholder="Your message*" name="message" style="font-family: Overpass;"></textarea>
         <span *ngIf="message.invalid && message.touched">Please enter a message</span>
     
         <!-- Privacy Policy Checkbox -->
