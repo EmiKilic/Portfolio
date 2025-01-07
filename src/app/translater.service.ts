@@ -164,6 +164,7 @@ export class TranslaterService {
       'impressumGenerator',
       'Created by <a href="https://impressum-generator.info/" target="_blank">impressum-generator.info</a> - powered by <a href="https://abfindungshero.de/" target="_blank">abfindungshero.de</a>'
     );
+    this.setInnerHTMLById('descriptionWeb', 'A responsive website showcasing products, featuring a modern design, smooth animations, and optimized performance.')
   }
   
   headerDEThree() {
@@ -190,6 +191,7 @@ export class TranslaterService {
       'impressumGenerator',
       'Erstellt von <a href="https://impressum-generator.info/" target="_blank">impressum-generator.info</a> - powered by <a href="https://abfindungshero.de/" target="_blank">abfindungshero.de</a>'
     );
+    this.setInnerHTMLById('descriptionWeb', 'Eine responsive Website zur Präsentation von Produkten mit modernem Design, flüssigen Animationen und optimierter Leistung.')
   }
   
   headerDEPolicy() {

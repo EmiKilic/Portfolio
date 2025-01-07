@@ -17,6 +17,7 @@ export class PortfolioComponent implements AfterViewInit {
     // Observe elements with ID 'game-one' and 'game-two', applying styles to '.text-one' and '.text-two' respectively
     this.observeElementById('game-one', '.text-one');
     this.observeElementById('game-two', '.text-two');
+    this.observeElementById('game-three', '.text-three');
   }
 
   // Function to handle the rotation effect on mouseover
